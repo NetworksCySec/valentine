@@ -16,6 +16,17 @@ body{
   overflow: hidden;
 }
 
+/* iOS safe areas */
+@supports (padding: env(safe-area-inset-top)) {
+  body{
+    padding:
+      env(safe-area-inset-top)
+      env(safe-area-inset-right)
+      env(safe-area-inset-bottom)
+      env(safe-area-inset-left);
+  }
+}
+
 @keyframes gradientMove{
   0%{background-position:0% 50%}
   50%{background-position:100% 50%}
@@ -97,11 +108,19 @@ button{
   cursor: pointer;
 
   transition: box-shadow 0.2s ease, filter 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* PAS de transform ici */
-button:hover{
-  filter: brightness(1.1);
+/* Hover uniquement quand un vrai hover existe (PC) */
+@media (hover: hover) and (pointer: fine) {
+  button:hover{
+    filter: brightness(1.1);
+  }
+}
+
+/* Feedback tactile (mobile) */
+button:active{
+  filter: brightness(1.05);
 }
 
 /* Oui */
@@ -112,9 +131,11 @@ button:hover{
   box-shadow: 0 10px 25px rgba(255,0,120,0.35);
 }
 
-.btn-yes:hover{
-  box-shadow: 0 0 0 6px rgba(255,255,255,0.15),
-              0 12px 30px rgba(255,0,120,0.45);
+@media (hover: hover) and (pointer: fine) {
+  .btn-yes:hover{
+    box-shadow: 0 0 0 6px rgba(255,255,255,0.15),
+                0 12px 30px rgba(255,0,120,0.45);
+  }
 }
 
 /* Non */
@@ -137,4 +158,66 @@ button:hover{
   margin-top: 14px;
   font-size: 14px;
   opacity: 0.9;
+}
+
+/* =========================================================
+   RESPONSIVE MOBILE (optimisé)
+   ========================================================= */
+@media (max-width: 600px){
+
+  body{
+    padding: 14px;
+    align-items: flex-start; /* évite que ça “sort” en bas */
+  }
+
+  .card{
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  h1{
+    font-size: 28px;
+  }
+
+  p{
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  /* Zone de jeu : on utilise un max en vh pour éviter le scroll */
+  .stage{
+    height: min(420px, 58vh);
+    border-radius: 16px;
+  }
+
+  /* Boutons : plus faciles à taper */
+  button{
+    font-size: 16px;
+    padding: 13px 16px;
+    border-radius: 14px;
+    min-height: 48px; /* touch target */
+  }
+
+  /* Fond : coeurs un peu plus petits + moins opaques (plus propre sur tel) */
+  body::before{
+    opacity: 0.16;
+    background-size: 140px 140px;
+    animation-duration: 22s;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITÉ / PERF : Réduire les animations si demandé
+   ========================================================= */
+@media (prefers-reduced-motion: reduce){
+  body{
+    animation: none;
+  }
+  body::before{
+    animation: none;
+  }
+  *{
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
 }
