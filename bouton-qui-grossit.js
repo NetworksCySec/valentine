@@ -100,7 +100,7 @@ noBtn.addEventListener("click", (e) => {
 });
 
 yesBtn.addEventListener("click", () => {
-  window.location.href = "compteur-amour.html";
+  window.location.href = "choix.html";
 });
 
 resetGame();
