@@ -167,7 +167,7 @@ button:active{
 
   body{
     padding: 14px;
-    align-items: flex-start; /* évite que ça “sort” en bas */
+    align-items: flex-start;
   }
 
   .card{
@@ -184,25 +184,27 @@ button:active{
     line-height: 1.45;
   }
 
-  /* Zone de jeu : on utilise un max en vh pour éviter le scroll */
   .stage{
     height: min(420px, 58vh);
     border-radius: 16px;
   }
 
-  /* Boutons : plus faciles à taper */
   button{
     font-size: 16px;
     padding: 13px 16px;
     border-radius: 14px;
-    min-height: 48px; /* touch target */
+    min-height: 48px;
   }
 
-  /* Fond : coeurs un peu plus petits + moins opaques (plus propre sur tel) */
   body::before{
     opacity: 0.16;
     background-size: 140px 140px;
     animation-duration: 22s;
+  }
+
+  /* Puzzle : passe en colonne sur téléphone */
+  .puzzle-stage{
+    flex-direction: column !important;
   }
 }
 
