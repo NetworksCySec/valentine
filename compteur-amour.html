@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Compteur d’amour 💘</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="card">
+    <h1>Compteur d’amour 💘</h1>
+    <p id="status">Appuie pour mesurer ton amour…</p>
+
+    <div class="stage" id="meterStage" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px;">
+      <div style="width:min(700px,90%); height:26px; background: rgba(255,255,255,0.15); border-radius:999px; overflow:hidden; border:1px solid rgba(255,255,255,0.25);">
+        <div id="bar" style="height:100%; width:0%; border-radius:999px; background: linear-gradient(90deg, #ff2e63, #ff7aa2, #9b5de5); transition: width 0.25s ease;"></div>
+      </div>
+
+      <div style="font-size:34px; font-weight:900;">
+        <span id="percent">0</span>%
+      </div>
+
+      <button class="btn-yes" id="startBtn">Mesurer 💗</button>
+    </div>
+
+    <p class="small">Épreuve 5/7</p>
+  </div>
+
+  <script src="compteur-amour.js"></script>
+</body>
+</html>

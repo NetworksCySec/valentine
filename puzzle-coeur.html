@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Puzzle du cœur 🧩💖</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="card">
+    <h1>Puzzle du cœur 🧩💖</h1>
+    <p>Glisse les 10 morceaux dans les 10 cases pour reconstituer le cœur.</p>
+
+    <div class="stage" id="puzzleStage" style="display:flex; gap:18px; padding:18px; box-sizing:border-box; align-items:stretch;">
+      <!-- Zone pièces -->
+      <div style="flex:1; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); border-radius:16px; padding:14px;">
+        <h2 style="margin:0 0 10px 0; font-size:18px;">Pièces</h2>
+        <div id="pieces"
+             style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; align-content:flex-start; min-height:220px;">
+        </div>
+        <p class="small" style="margin:10px 0 0 0;">Glisse une pièce vers une case.</p>
+      </div>
+
+      <!-- Zone puzzle -->
+      <div style="flex:1.2; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); border-radius:16px; padding:14px;">
+        <h2 style="margin:0 0 10px 0; font-size:18px;">Puzzle</h2>
+        <div id="board"
+             style="display:grid; grid-template-columns: repeat(5, 1fr); gap:10px; place-items:center; min-height:260px;">
+        </div>
+        <p class="small" style="margin:10px 0 0 0;">Remplis toutes les cases : <span id="count">0</span> / 10</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="puzzle-coeur.js"></script>
+</body>
+</html>

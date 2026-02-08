@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz Amoureux 💘</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="card">
+    <h1>Quiz amoureux 💘</h1>
+    <p id="questionText">Chargement...</p>
+
+    <div class="stage" id="quizStage" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px;">
+      <button class="btn-yes" id="choice1"></button>
+      <button class="btn-no" id="choice2"></button>
+      <button class="btn-no" id="choice3"></button>
+    </div>
+
+    <p class="small"><span id="questionNumber">1 / 8</span></p>
+  </div>
+
+  <script src="quiz.js"></script>
+</body>
+</html>

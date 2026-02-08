@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Choix final</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h1>Réponse finale 😇</h1>
+    <p>Promis cette fois tu peux choisir non c'est la dernière épreuve !</p>
+
+    <div class="stage" id="stage">
+      <button class="floating btn-yes" id="btnA">Oui</button>
+      <button class="floating btn-no" id="btnB" style="top: 70%;">Non</button>
+    </div>
+
+    <p class="small">Étape 7/7</p>
+  </div>
+
+  <script src="choix.js"></script>
+  <script>
+  function flashEffect() {
+    document.body.style.transition = "background 0.3s";
+    document.body.style.background = "#2e7d32";
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mission Valentine 💘</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="card">
+    <h1>Mission Valentine 💘</h1>
+
+    <p style="font-size:18px; line-height:1.6; margin-bottom: 14px;">
+      Être ma Valentine, ça se mérite 😈
+    </p>
+
+    <p style="line-height:1.7; margin-bottom: 18px;">
+      Tu vas devoir participer à 7 mini-jeux pour être certain.<br>
+      N’hésite pas à tout tester !<br>
+      Si jamais tu ne réussis pas un test, tu devras uniquement recommencer le jeu en question
+    </p>
+
+    <div class="stage" style="height: 420px; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:18px; text-align:center; padding:18px; box-sizing:border-box;">
+      <div style="font-size: 76px; filter: drop-shadow(0 18px 28px rgba(0,0,0,0.35)); animation: pulse 0.9s ease-in-out infinite alternate;">
+        💖
+      </div>
+
+      <div style="max-width: 720px; opacity: 0.95;">
+        <div style="font-size: 20px; margin-bottom: 8px;">
+          Objectif : prouver ton amour.
+        </div>
+        <div style="font-size: 16px; opacity: 0.9;">
+          Prépare tes réflexes, ton cerveau, et ton cœur 😌
+        </div>
+      </div>
+
+      <button class="btn-yes" id="startBtn" style="font-size:20px; padding:16px 34px;">
+        Commencer l’aventure 💘
+      </button>
+
+      <div class="small" style="opacity: 0.95;">
+        (Promis… ça va être drôle. Enfin… je crois😈)
+      </div>
+    </div>
+
+    <p class="small">Bienvenue • Étape 0/7</p>
+  </div>
+
+  <script>
+    document.getElementById("startBtn").addEventListener("click", () => {
+      window.location.href = "quiz.html";
+    });
+  </script>
+
+  <style>
+    @keyframes pulse {
+      from { transform: scale(1); }
+      to   { transform: scale(1.08); }
+    }
+  </style>
+</body>
+</html>

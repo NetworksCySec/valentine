@@ -1,0 +1,140 @@
+/* ============ FOND + CENTRAGE ============ */
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family: system-ui, Arial, sans-serif;
+  color:#fff;
+
+  background: linear-gradient(135deg, #ff2e63, #ff7aa2, #9b5de5, #3a0ca3);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes gradientMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* ============ TAPIS DE COEURS ============ */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.22;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Ctext x='10' y='55' font-size='36'%3E%F0%9F%92%96%3C/text%3E%3Ctext x='80' y='35' font-size='26'%3E%F0%9F%92%97%3C/text%3E%3Ctext x='95' y='110' font-size='34'%3E%F0%9F%92%98%3C/text%3E%3Ctext x='25' y='125' font-size='28'%3E%F0%9F%92%95%3C/text%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px 180px;
+
+  animation: heartDrift 18s linear infinite;
+}
+
+@keyframes heartDrift{
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(-180px, 180px); }
+}
+
+/* ============ CARTE (GLASS) ============ */
+.card{
+  width: min(1000px, 95vw);
+  padding: 34px;
+  border-radius: 26px;
+  text-align:center;
+
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.28);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  box-shadow:
+    0 24px 70px rgba(0,0,0,0.42),
+    0 0 40px rgba(255, 80, 150, 0.18);
+
+  position: relative;
+  z-index: 1;
+}
+
+/* ============ TEXTES ============ */
+h1{
+  margin: 0 0 10px 0;
+  font-size: 40px;
+}
+
+p{
+  margin: 0 0 18px 0;
+  color: rgba(255, 235, 245, 0.9);
+}
+
+/* ============ ZONE EPREUVES ============ */
+.stage{
+  position: relative;
+  width: 100%;
+  height: 560px;
+  margin-top: 18px;
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.10);
+  border: 2px dashed rgba(255,255,255,0.35);
+  overflow: hidden;
+}
+
+/* ============ BOUTONS ============ */
+button{
+  border: none;
+  border-radius: 16px;
+  padding: 14px 26px;
+  font-size: 18px;
+  cursor: pointer;
+
+  transition: box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+/* PAS de transform ici */
+button:hover{
+  filter: brightness(1.1);
+}
+
+/* Oui */
+.btn-yes{
+  background: linear-gradient(45deg, #ff2e63, #ff7aa2);
+  color: #fff;
+  font-weight: 800;
+  box-shadow: 0 10px 25px rgba(255,0,120,0.35);
+}
+
+.btn-yes:hover{
+  box-shadow: 0 0 0 6px rgba(255,255,255,0.15),
+              0 12px 30px rgba(255,0,120,0.45);
+}
+
+/* Non */
+.btn-no{
+  background: linear-gradient(45deg, #7209b7, #3a0ca3);
+  color: #fff;
+  font-weight: 800;
+  box-shadow: 0 10px 25px rgba(80,0,255,0.30);
+}
+
+/* Boutons animés */
+.floating{
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+}
+
+.small{
+  margin-top: 14px;
+  font-size: 14px;
+  opacity: 0.9;
+}
