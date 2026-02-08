@@ -177,7 +177,7 @@ stage.addEventListener(
 );
 
 yesBtn.addEventListener("click", () => {
-  window.location.href = "choix.html";
+  window.location.href = "bouton-qui-grossit.html";
 });
 
 // Si par miracle elle clique dessus

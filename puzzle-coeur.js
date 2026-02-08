@@ -124,6 +124,6 @@ function finishPuzzle() {
   countDisplay.textContent = TOTAL;
 
   setTimeout(() => {
-    window.location.href = "bouton-qui-grossit.html";
+    window.location.href = "compteur-amour.html";
   }, 1400);
 }
